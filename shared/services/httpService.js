@@ -1,4 +1,4 @@
 const http = Object.freeze({
-  get: (url, options = {}) => $.get(url, ...options),
-  post: (url, options = {}) => $.post(url, ...options)
-})
+	get: (url, ...options) => $.get(`${appBaseURL}/${url}`, ...options),
+	post: (url, ...options) => $.post(`${appBaseURL}/${url}`, ...options),
+});

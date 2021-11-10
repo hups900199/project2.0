@@ -6,6 +6,4 @@
         echo json_encode(array("userId" => $_SESSION['UserID'], "role" => $_SESSION['role'], "username" => $_SESSION['username']));
     }
     else echo json_encode(array());
-
-
 ?>

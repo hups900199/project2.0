@@ -33,6 +33,7 @@
       // Setup global scripts and constants
       const appBaseURL = "http://localhost/project2.0";
       const loadScript = path => $.getScript(`${appBaseURL}/${path}`);
+      const loadStylesheet = path => $('head').append($(`<link href="${appBaseURL}/${path}" rel="stylesheet" />`));
       const render = (target, path) => $(target).load(`${appBaseURL}/${path}`);
 
       loadScript('shared/appUtils.js');

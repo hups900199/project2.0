@@ -3,7 +3,17 @@
 <footer></footer>
 
 <script>
+	loadScript('shared/components/nav/router.js');
+
+	// Auth guard.
+	if (!sessionStorage.getItem('currentUserInfo')) // Check if the local session storage has any user info.
+		http.get('controllers/homeController.php', res => { // Then check if there's any session on the backend.
+			const data = JSON.parse(res);
+			if(isEmpty(data)) {
+				alert('not logged in!')
+			};
+		});
+
 	render('header', 'shared/components/header');
 	render('footer', 'shared/components/footer');
-	loadScript('shared/components/nav/router.js');
 </script>
